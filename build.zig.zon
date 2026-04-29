@@ -1,0 +1,16 @@
+.{
+    .name = .basebuild,
+    .version = "0.15.1",
+    .dependencies = .{
+        .zflecs = .{
+            .url = "git+https://github.com/zig-gamedev/zflecs#631b46c4a284ad093c6963c45737d1568edddf71",
+            .hash = "zflecs-0.2.0-dev-1PN3yg0OQQD8uFm8oLV-Bt-7rJGD8oTCso_X4i3dMmFm",
+        },
+        .raylib_zig = .{
+            .url = "https://github.com/raylib-zig/raylib-zig/archive/aa9ee05f2246b813f75206bf817c9fbdfcb06101.tar.gz",
+            .hash = "raylib_zig-5.6.0-dev-KE8RECFQBQBn0BrEyEyK5NST461oRzpk6XeGeF9qBU2M",
+        },
+    },
+    .paths = .{""},
+    .fingerprint = 0x76e64c301f37823f,
+}
