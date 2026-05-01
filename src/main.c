@@ -29,7 +29,6 @@ int main(int argc, char* argv[]) {
 	scene_t *menu = create_main_menu_scene();
 	scene_manager_change_scene(&g_scene_mgr, menu, 0.0f);
 	
-
 	SetTargetFPS(180);
 	while(!WindowShouldClose() && !appShouldClose) {
 		float dt = GetFrameTime();

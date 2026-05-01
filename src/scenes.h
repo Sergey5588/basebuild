@@ -4,5 +4,6 @@
 #include "scene_manager.h"   // for scene_t
 
 scene_t *create_main_menu_scene(void);
+scene_t *create_game_scene(void);
 
 #endif

@@ -3,12 +3,17 @@
 #include "ui.h"
 #include "clay_renderer_raylib.h"
 #include "globals.h"
+#include "scene_manager.h"
 //typedef struct {
 //
 //} main_menu_data_t;
 
 void CloseApp() {
 	appShouldClose = true;
+}
+void StartGame() {
+	scene_t *game = create_game_scene();
+	scene_manager_change_scene(&g_scene_mgr, game, 1.0f);
 }
 
 void main_menu_init(scene_t *self) {
@@ -30,7 +35,7 @@ void main_menu_draw(scene_t *self, float dt) {
 	CLAY(CLAY_ID("Root"), {.layout = {.sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_GROW(0) }, .childAlignment = {CLAY_ALIGN_X_CENTER, CLAY_ALIGN_Y_CENTER}}}) {
 		CLAY(CLAY_ID("Buttons"), { .layout = {.childGap = 8, .layoutDirection= CLAY_TOP_TO_BOTTOM, .sizing = {CLAY_SIZING_PERCENT(0.25), CLAY_SIZING_PERCENT(0.5)}}}) {
 			
-			Button(CLAY_STRING("Play"), NULL);
+			Button(CLAY_STRING("Play"), (__ButtonClickFn)StartGame);
 			Button(CLAY_STRING("Settings"), NULL);
 			Button(CLAY_STRING("Exit"),(__ButtonClickFn)CloseApp);
 		}

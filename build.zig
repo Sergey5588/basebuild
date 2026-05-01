@@ -28,7 +28,11 @@ pub fn build(b: *std.Build) void {
         .files = &.{
             "src/main.c",
             "src/scene_manager.c",
+            //scenes
             "src/main_menu.c",
+            "src/game.c",
+
+            "src/ui.c",
             "vendor/clay_renderer_raylib.c"
         },  
         .flags = &.{  
