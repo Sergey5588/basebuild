@@ -38,7 +38,7 @@ void game_draw(scene_t *self, float dt) {
 }
 void game_destroy(scene_t *self) {
 	game_data_t *ctx = self->ctx;
-	if(ctx->ecs) ecs_quit(ctx->ecs);
+	if(ctx->ecs) ecs_fini(ctx->ecs);
 	if(ctx) free(ctx);
 }
 scene_t *create_game_scene(void) {
