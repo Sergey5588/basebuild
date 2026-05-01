@@ -37,7 +37,9 @@ void game_draw(scene_t *self, float dt) {
 	DrawTextEx(fonts[0], "Game here!", (Vector2){0,0},32,2, WHITE);
 }
 void game_destroy(scene_t *self) {
-
+	game_data_t *ctx = self->ctx;
+	if(ctx->ecs) ecs_quit(ctx->ecs);
+	if(ctx) free(ctx);
 }
 scene_t *create_game_scene(void) {
     scene_t *s = calloc(1, sizeof(scene_t));
