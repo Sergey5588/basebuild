@@ -34,7 +34,7 @@ void main_menu_draw(scene_t *self, float dt) {
 	Clay_BeginLayout();
 	CLAY(CLAY_ID("Root"), {.layout = {.sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_GROW(0) }, .childAlignment = {CLAY_ALIGN_X_CENTER, CLAY_ALIGN_Y_CENTER}}}) {
 		CLAY(CLAY_ID("Buttons"), { .layout = {.childGap = 8, .layoutDirection= CLAY_TOP_TO_BOTTOM, .sizing = {CLAY_SIZING_PERCENT(0.25), CLAY_SIZING_PERCENT(0.5)}}}) {
-			
+			CLAY_TEXT(CLAY_STRING("Base building game"), TEXT_CONFIG);
 			Button(CLAY_STRING("Play"), (__ButtonClickFn)StartGame);
 			Button(CLAY_STRING("Settings"), NULL);
 			Button(CLAY_STRING("Exit"),(__ButtonClickFn)CloseApp);
