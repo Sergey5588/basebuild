@@ -4,9 +4,6 @@
 #include <flecs.h>
 
 
-#undef ECS_ALIGNOF  
-#define ECS_ALIGNOF(T) ((int64_t)_Alignof(T))
-#define RES_PATH "resources/"
 #include "globals.h"
 
 #include "clay_renderer_raylib.h"

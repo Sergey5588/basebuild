@@ -28,6 +28,7 @@ pub fn build(b: *std.Build) void {
         .files = &.{
             "src/main.c",
             "src/scene_manager.c",
+            "src/systems.c",
             //scenes
             "src/main_menu.c",
             "src/game.c",
