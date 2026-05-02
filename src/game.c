@@ -55,15 +55,16 @@ void game_update(scene_t *self, float dt) {
 }
 void game_draw(scene_t *self, float dt) {
 	game_data_t *ctx = self->ctx;
+	BeginMode3D(ctx->cam);
+	ecs_run(ctx->ecs, ecs_id(RenderSprite3D), dt,NULL);
+	DrawGrid(10.0f, 1.0f);
+	EndMode3D();
+
 	Clay_BeginLayout();
 	CLAY(CLAY_ID("Root"), {.layout = {.sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_GROW(0) }, .childAlignment = {CLAY_ALIGN_X_CENTER, CLAY_ALIGN_Y_CENTER}}}) {
 	}
 	Clay_RenderCommandArray renderCommands = Clay_EndLayout(dt);
 	Clay_Raylib_Render(renderCommands, fonts);
-	BeginMode3D(ctx->cam);
-	ecs_run(ctx->ecs, ecs_id(RenderSprite3D), dt,NULL);
-	DrawGrid(10.0f, 1.0f);
-	EndMode3D();
 	DrawTextEx(fonts[0], "Game here!", (Vector2){0,0},32,2, WHITE);
 }
 void game_destroy(scene_t *self) {
